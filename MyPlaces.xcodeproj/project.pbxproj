@@ -14,6 +14,7 @@
 		8642775A2353AE3E00A51177 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864277582353AE3E00A51177 /* LaunchScreen.storyboard */; };
 		864277622353B7FC00A51177 /* MainTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864277612353B7FC00A51177 /* MainTableVC.swift */; };
 		864277642354D13000A51177 /* CustomTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864277632354D13000A51177 /* CustomTVCell.swift */; };
+		8642776623560B5400A51177 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8642776523560B5400A51177 /* PlaceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8642775B2353AE3E00A51177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		864277612353B7FC00A51177 /* MainTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableVC.swift; sourceTree = "<group>"; };
 		864277632354D13000A51177 /* CustomTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTVCell.swift; sourceTree = "<group>"; };
+		8642776523560B5400A51177 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				8642774F2353AE3D00A51177 /* SceneDelegate.swift */,
 				864277632354D13000A51177 /* CustomTVCell.swift */,
 				864277612353B7FC00A51177 /* MainTableVC.swift */,
+				8642776523560B5400A51177 /* PlaceModel.swift */,
 				864277532353AE3D00A51177 /* Main.storyboard */,
 				864277562353AE3E00A51177 /* Assets.xcassets */,
 				864277582353AE3E00A51177 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				8642774E2353AE3D00A51177 /* AppDelegate.swift in Sources */,
 				864277622353B7FC00A51177 /* MainTableVC.swift in Sources */,
+				8642776623560B5400A51177 /* PlaceModel.swift in Sources */,
 				864277642354D13000A51177 /* CustomTVCell.swift in Sources */,
 				864277502353AE3D00A51177 /* SceneDelegate.swift in Sources */,
 			);
