@@ -14,6 +14,7 @@ class MainTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView()
     }
 
     // MARK: - Table view data source
@@ -35,6 +36,7 @@ class MainTableVC: UITableViewController {
         return cell
     }
     
+    
 
     /*
     // MARK: - Navigation
@@ -45,5 +47,6 @@ class MainTableVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue){}
 }
