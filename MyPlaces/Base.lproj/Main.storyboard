@@ -27,7 +27,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="IdM-1Q-cki">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250.00000000000006"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -185,9 +185,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" id="eJa-rX-bgn">
-                                <rect key="frame" x="0.0" y="115" width="414" height="781"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eJa-rX-bgn">
+                                <rect key="frame" x="0.0" y="127" width="414" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="KXR-Zi-fgf" customClass="CustomTVCell" customModule="MyPlaces" customModuleProvider="target">
@@ -251,9 +250,8 @@
                                     <outlet property="delegate" destination="c6Y-AU-PVi" id="wzQ-kE-Dgb"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="SS3-as-IyJ">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SS3-as-IyJ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Date"/>
                                     <segment title="Name"/>
@@ -264,6 +262,15 @@
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SS3-as-IyJ" firstAttribute="trailing" secondItem="F4Z-fg-R8q" secondAttribute="trailing" id="C7S-TH-ZzC"/>
+                            <constraint firstItem="eJa-rX-bgn" firstAttribute="top" secondItem="SS3-as-IyJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Nw4-x0-aXf"/>
+                            <constraint firstItem="eJa-rX-bgn" firstAttribute="trailing" secondItem="F4Z-fg-R8q" secondAttribute="trailing" id="T80-Fn-EvD"/>
+                            <constraint firstItem="SS3-as-IyJ" firstAttribute="top" secondItem="F4Z-fg-R8q" secondAttribute="top" id="UCR-Ir-YqR"/>
+                            <constraint firstItem="SS3-as-IyJ" firstAttribute="leading" secondItem="F4Z-fg-R8q" secondAttribute="leading" id="pcf-zg-Uve"/>
+                            <constraint firstItem="eJa-rX-bgn" firstAttribute="leading" secondItem="F4Z-fg-R8q" secondAttribute="leading" id="vce-tC-LXT"/>
+                            <constraint firstAttribute="bottom" secondItem="eJa-rX-bgn" secondAttribute="bottom" constant="20" symbolic="YES" id="wDA-ZK-HLR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="F4Z-fg-R8q"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Places" largeTitleDisplayMode="never" id="HjG-dU-2XF">
