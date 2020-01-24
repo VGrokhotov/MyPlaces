@@ -18,6 +18,7 @@
 		8642776623560B5400A51177 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8642776523560B5400A51177 /* PlaceModel.swift */; };
 		864277682356213100A51177 /* NewPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864277672356213100A51177 /* NewPlaceVC.swift */; };
 		8642776A23573F8D00A51177 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8642776923573F8D00A51177 /* StorageManager.swift */; };
+		865167A123D929C300600854 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865167A023D929C300600854 /* RatingControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8642776523560B5400A51177 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		864277672356213100A51177 /* NewPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceVC.swift; sourceTree = "<group>"; };
 		8642776923573F8D00A51177 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		865167A023D929C300600854 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		93DCF4B72048F7C93F1EBFA8 /* Pods-MyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.debug.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
 		CE6B09C01349C517DC47A774 /* Pods_MyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 				864277672356213100A51177 /* NewPlaceVC.swift */,
 				864277612353B7FC00A51177 /* MainTableVC.swift */,
 				864277632354D13000A51177 /* CustomTVCell.swift */,
+				865167A023D929C300600854 /* RatingControl.swift */,
 				8642776923573F8D00A51177 /* StorageManager.swift */,
 				8642776523560B5400A51177 /* PlaceModel.swift */,
 				864277532353AE3D00A51177 /* Main.storyboard */,
@@ -222,6 +225,7 @@
 				864277622353B7FC00A51177 /* MainTableVC.swift in Sources */,
 				8642776623560B5400A51177 /* PlaceModel.swift in Sources */,
 				8642776A23573F8D00A51177 /* StorageManager.swift in Sources */,
+				865167A123D929C300600854 /* RatingControl.swift in Sources */,
 				864277682356213100A51177 /* NewPlaceVC.swift in Sources */,
 				864277642354D13000A51177 /* CustomTVCell.swift in Sources */,
 				864277502353AE3D00A51177 /* SceneDelegate.swift in Sources */,

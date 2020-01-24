@@ -144,6 +144,23 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="QCE-kJ-kf7">
+                                        <rect key="frame" x="0.0" y="503" width="414" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QCE-kJ-kf7" id="Yvj-xj-GRf">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SUs-4L-mdD" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
+                                                    <rect key="frame" x="81" y="48" width="252" height="44"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SUs-4L-mdD" firstAttribute="centerX" secondItem="Yvj-xj-GRf" secondAttribute="centerX" id="QOX-v3-8wQ"/>
+                                                <constraint firstItem="SUs-4L-mdD" firstAttribute="centerY" secondItem="Yvj-xj-GRf" secondAttribute="centerY" id="hkz-UY-gxw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -169,6 +186,7 @@
                         <outlet property="placeLocation" destination="Kk1-rE-RJx" id="24P-GP-m6m"/>
                         <outlet property="placeName" destination="xSD-dF-Mgg" id="18M-Lz-lQ2"/>
                         <outlet property="placeType" destination="fOz-vP-W9I" id="IBg-Ve-A5S"/>
+                        <outlet property="ratingControl" destination="SUs-4L-mdD" id="3h2-o6-Uto"/>
                         <outlet property="saveButton" destination="IKs-2D-kMQ" id="fRl-qp-2ze"/>
                     </connections>
                 </tableViewController>
@@ -186,7 +204,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eJa-rX-bgn">
-                                <rect key="frame" x="0.0" y="127" width="414" height="749"/>
+                                <rect key="frame" x="0.0" y="127" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="KXR-Zi-fgf" customClass="CustomTVCell" customModule="MyPlaces" customModuleProvider="target">
@@ -269,7 +287,7 @@
                             <constraint firstItem="SS3-as-IyJ" firstAttribute="top" secondItem="F4Z-fg-R8q" secondAttribute="top" id="UCR-Ir-YqR"/>
                             <constraint firstItem="SS3-as-IyJ" firstAttribute="leading" secondItem="F4Z-fg-R8q" secondAttribute="leading" id="pcf-zg-Uve"/>
                             <constraint firstItem="eJa-rX-bgn" firstAttribute="leading" secondItem="F4Z-fg-R8q" secondAttribute="leading" id="vce-tC-LXT"/>
-                            <constraint firstAttribute="bottom" secondItem="eJa-rX-bgn" secondAttribute="bottom" constant="20" symbolic="YES" id="wDA-ZK-HLR"/>
+                            <constraint firstAttribute="bottom" secondItem="eJa-rX-bgn" secondAttribute="bottom" id="wDA-ZK-HLR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F4Z-fg-R8q"/>
                     </view>
