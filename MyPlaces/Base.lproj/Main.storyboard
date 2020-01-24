@@ -27,7 +27,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="IdM-1Q-cki">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250.00000000000006"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -151,9 +151,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SUs-4L-mdD" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
-                                                    <rect key="frame" x="81" y="48" width="252" height="44"/>
-                                                </stackView>
                                                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="170" placeholderIntrinsicHeight="30" translatesAutoresizingMaskIntoConstraints="NO" id="txJ-V2-OVK" customClass="CosmosView" customModule="Cosmos">
                                                     <rect key="frame" x="122" y="55" width="170" height="30"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -173,19 +170,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="txJ-V2-OVK" firstAttribute="centerX" secondItem="Yvj-xj-GRf" secondAttribute="centerX" id="K32-hy-8Bc"/>
-                                                <constraint firstItem="SUs-4L-mdD" firstAttribute="centerX" secondItem="Yvj-xj-GRf" secondAttribute="centerX" id="QOX-v3-8wQ"/>
-                                                <constraint firstItem="SUs-4L-mdD" firstAttribute="centerY" secondItem="Yvj-xj-GRf" secondAttribute="centerY" id="hkz-UY-gxw"/>
                                                 <constraint firstItem="txJ-V2-OVK" firstAttribute="centerY" secondItem="Yvj-xj-GRf" secondAttribute="centerY" id="wyg-TR-8QV"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="SUs-4L-mdD"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="QOX-v3-8wQ"/>
-                                                    <exclude reference="hkz-UY-gxw"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -214,7 +200,6 @@
                         <outlet property="placeLocation" destination="Kk1-rE-RJx" id="24P-GP-m6m"/>
                         <outlet property="placeName" destination="xSD-dF-Mgg" id="18M-Lz-lQ2"/>
                         <outlet property="placeType" destination="fOz-vP-W9I" id="IBg-Ve-A5S"/>
-                        <outlet property="ratingControl" destination="SUs-4L-mdD" id="3h2-o6-Uto"/>
                         <outlet property="saveButton" destination="IKs-2D-kMQ" id="fRl-qp-2ze"/>
                     </connections>
                 </tableViewController>
