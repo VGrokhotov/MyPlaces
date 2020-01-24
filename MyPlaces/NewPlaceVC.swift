@@ -88,7 +88,7 @@ class NewPlaceVC: UITableViewController {
                              location: placeLocation.text,
                              type: placeType.text,
                              imageData: imageData,
-                             rating: /*Double(ratingControl.rating)*/ currentRating)
+                             rating: currentRating)
         
         if currentPlace != nil {
             try! realm.write {
@@ -115,7 +115,6 @@ class NewPlaceVC: UITableViewController {
             placeName.text = currentPlace?.name
             placeLocation.text = currentPlace?.location
             placeType.text = currentPlace?.type
-            //ratingControl.rating = Int(currentPlace.rating)
             cosmosView.rating = currentPlace.rating
         }
     }
