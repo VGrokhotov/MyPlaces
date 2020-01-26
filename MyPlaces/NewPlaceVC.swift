@@ -13,7 +13,6 @@ class NewPlaceVC: UITableViewController {
     
     var imageIsChanged = false
     var currentPlace: Place!
-    var currentRating = 0.0
 
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -33,10 +32,7 @@ class NewPlaceVC: UITableViewController {
         setupEditScreen()
         
         cosmosView.settings.fillMode = .precise
-        cosmosView.didTouchCosmos = { rating in
-            self.currentRating = rating
-            
-        }
+
     }
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -72,6 +68,16 @@ class NewPlaceVC: UITableViewController {
         }
     }
     
+    //MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "showMap"{
+            return
+        }
+        let mapVC = segue.destination as! MapVC
+        mapVC.place = currentPlace
+    }
+    
     func savePlace() {
         
         var image: UIImage?
@@ -88,7 +94,7 @@ class NewPlaceVC: UITableViewController {
                              location: placeLocation.text,
                              type: placeType.text,
                              imageData: imageData,
-                             rating: currentRating)
+                             rating: cosmosView.rating)
         
         if currentPlace != nil {
             try! realm.write {
