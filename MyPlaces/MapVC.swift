@@ -8,17 +8,20 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapVC: UIViewController {
 
-    var place: Place!
+    var place = Place()
     let annotationIdentifier = "annotationIdentifier"
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
         setupPlacemark()
+        checkLocationServices()
     }
     
     @IBAction func closeVC() {
@@ -53,6 +56,60 @@ class MapVC: UIViewController {
         }
     }
 
+    private func checkLocationServices(){
+        if CLLocationManager.locationServicesEnabled(){
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.showAlert(
+                    title: "Location Services are disabled",
+                    message: "To enable it go: Settings -> Privacy -> Location Services and turn on")
+            }
+        }
+    }
+    
+    private func setupLocationManager(){
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    private func checkLocationAuthorization(){
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            mapView.showsUserLocation = true
+            break
+        case .denied:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.showAlert(
+                    title: "Your Location is not available",
+                    message: "To give a permission go to : Settings -> MyPlaces -> Location")
+            }
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.showAlert(
+                    title: "Your Location is not available",
+                    message: "To give a permission go to : Settings -> MyPlaces -> Location")
+            }
+            break
+        case .authorizedAlways:
+            break
+        @unknown default:
+            print("new case is available")
+        }
+    }
+    
+    private func showAlert(title: String, message: String){
+        let allert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        
+        allert.addAction(okAction)
+        present(allert, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -86,5 +143,11 @@ extension MapVC: MKMapViewDelegate{
         
         
         return annotationView
+    }
+}
+
+extension MapVC: CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
     }
 }
