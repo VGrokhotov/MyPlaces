@@ -10,23 +10,59 @@ import UIKit
 import MapKit
 import CoreLocation
 
+protocol MapVCDelegate {
+    func getAddress(_ address: String?)
+}
+
 class MapVC: UIViewController {
 
+    var mapVCDelegate: MapVCDelegate?
     var place = Place()
+    
     let annotationIdentifier = "annotationIdentifier"
     let locationManager = CLLocationManager()
+    let regionInMeters = 10_000.0
+    var incomeSequeIdentivier = ""
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapPinImage: UIImageView!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addressLabel.text = ""
         mapView.delegate = self
-        setupPlacemark()
+        setupMapView( )
         checkLocationServices()
+    }
+    
+    
+    @IBAction func centerViewInUserLocation() {
+        showUserLocation()
+    }
+    
+    @IBAction func doneButtonPressed() {
+        mapVCDelegate?.getAddress(addressLabel.text)
+        dismiss(animated: true)
     }
     
     @IBAction func closeVC() {
         dismiss(animated: true)
     }
+    
+    private func setupMapView(){
+        if incomeSequeIdentivier ==  "showPlace"{
+            setupPlacemark()
+            mapPinImage.isHidden = true
+            doneButton.isHidden = true
+            addressLabel.isHidden = true
+        }
+        
+    }
+    
     
     private func setupPlacemark(){
         guard let location = place.location else { return }
@@ -78,6 +114,7 @@ class MapVC: UIViewController {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
+            if incomeSequeIdentivier ==  "getAddress"{ showUserLocation() }
             break
         case .denied:
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -100,6 +137,20 @@ class MapVC: UIViewController {
         @unknown default:
             print("new case is available")
         }
+    }
+    private func showUserLocation(){
+        if let location = locationManager.location?.coordinate{
+            let region = MKCoordinateRegion(center: location,
+                                            latitudinalMeters: regionInMeters,
+                                             longitudinalMeters: regionInMeters)
+            mapView.setRegion(region, animated: true)
+        }
+    }
+    
+    private func  getCentralLocation(for mapView: MKMapView) -> CLLocation{
+        let latitude = mapView.centerCoordinate.latitude
+        let longitude = mapView.centerCoordinate.longitude
+        return CLLocation(latitude: latitude, longitude: longitude)
     }
     
     private func showAlert(title: String, message: String){
@@ -143,6 +194,38 @@ extension MapVC: MKMapViewDelegate{
         
         
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let center = getCentralLocation(for: mapView)
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(center) { (placemarks, error) in
+            if let error = error{
+                print(error)
+                return
+            }
+            
+            guard let placemarks = placemarks else { return }
+            
+            let placemark = placemarks.first
+            let city = placemark?.locality
+            let streetName = placemark?.thoroughfare
+            let buildNumber = placemark?.subThoroughfare
+            
+            DispatchQueue.main.async {
+                if streetName != nil && buildNumber != nil && city != nil{
+                    self.addressLabel.text = "\(city!), \(streetName!), \(buildNumber!)"
+                } else if streetName != nil && city != nil{
+                    self.addressLabel.text = "\(city!), \(streetName!)"
+                } else if city != nil{
+                    self.addressLabel.text = "\(city!)"
+                } else {
+                    self.addressLabel.text = ""
+                }
+            }
+            
+        }
     }
 }
 
