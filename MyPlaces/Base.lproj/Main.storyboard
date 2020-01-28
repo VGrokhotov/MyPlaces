@@ -290,14 +290,44 @@
                                     <action selector="doneButtonPressed" destination="m2m-Nj-CB5" eventType="touchUpInside" id="c68-V5-4o3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHK-Zl-Nkc">
+                                <rect key="frame" x="182" y="738" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="64F-za-uJX"/>
+                                    <constraint firstAttribute="width" constant="50" id="IEh-VP-tkZ"/>
+                                </constraints>
+                                <state key="normal" image="GetDirection"/>
+                                <connections>
+                                    <action selector="goButtonPressed" destination="m2m-Nj-CB5" eventType="touchUpInside" id="7h8-Lp-8MK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuC-0y-qfh">
+                                <rect key="frame" x="20" y="67" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xra-tD-Jci">
+                                <rect key="frame" x="20" y="127" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="UA8-to-ANI" secondAttribute="bottom" id="5w5-wg-PDJ"/>
+                            <constraint firstItem="xra-tD-Jci" firstAttribute="top" secondItem="OuC-0y-qfh" secondAttribute="bottom" constant="30" id="7sb-Ar-yze"/>
+                            <constraint firstItem="jHK-Zl-Nkc" firstAttribute="centerX" secondItem="oy2-ZR-3jm" secondAttribute="centerX" id="7uE-8d-evX"/>
+                            <constraint firstItem="8gC-8u-NWN" firstAttribute="trailing" secondItem="OuC-0y-qfh" secondAttribute="trailing" constant="20" id="8LW-aZ-fDV"/>
                             <constraint firstItem="UA8-to-ANI" firstAttribute="leading" secondItem="oy2-ZR-3jm" secondAttribute="leading" id="Cor-Zp-5QX"/>
                             <constraint firstItem="o3b-KG-o2S" firstAttribute="leading" secondItem="8gC-8u-NWN" secondAttribute="leading" constant="20" id="EFF-g7-KK7"/>
+                            <constraint firstItem="xra-tD-Jci" firstAttribute="leading" secondItem="8gC-8u-NWN" secondAttribute="leading" constant="20" id="IWq-xd-ovZ"/>
                             <constraint firstItem="UA8-to-ANI" firstAttribute="top" secondItem="oy2-ZR-3jm" secondAttribute="top" id="MZ9-Iu-OdX"/>
                             <constraint firstItem="Vrx-wg-go6" firstAttribute="centerX" secondItem="oy2-ZR-3jm" secondAttribute="centerX" id="RdE-6b-zoc"/>
+                            <constraint firstItem="OuC-0y-qfh" firstAttribute="top" secondItem="t0G-RV-jFM" secondAttribute="bottom" constant="17" id="UOD-Qr-tWP"/>
+                            <constraint firstItem="8gC-8u-NWN" firstAttribute="trailing" secondItem="xra-tD-Jci" secondAttribute="trailing" constant="20" id="VwU-XV-zfM"/>
+                            <constraint firstItem="OuC-0y-qfh" firstAttribute="leading" secondItem="8gC-8u-NWN" secondAttribute="leading" constant="20" id="Xvf-Ac-NqL"/>
                             <constraint firstItem="8gC-8u-NWN" firstAttribute="trailing" secondItem="KuV-ec-0Jv" secondAttribute="trailing" constant="20" id="Y77-Mb-XwA"/>
                             <constraint firstItem="Vrx-wg-go6" firstAttribute="centerY" secondItem="oy2-ZR-3jm" secondAttribute="centerY" constant="-20" id="Z1Z-bq-qFq"/>
                             <constraint firstAttribute="bottom" secondItem="KuV-ec-0Jv" secondAttribute="bottom" constant="20" id="cZs-pQ-zc3"/>
@@ -308,14 +338,18 @@
                             <constraint firstItem="8gC-8u-NWN" firstAttribute="bottom" secondItem="wjB-xp-fYa" secondAttribute="bottom" constant="20" id="j7x-aD-I6s"/>
                             <constraint firstItem="t0G-RV-jFM" firstAttribute="top" secondItem="8gC-8u-NWN" secondAttribute="top" constant="20" id="kzn-vs-gl7"/>
                             <constraint firstItem="UA8-to-ANI" firstAttribute="trailing" secondItem="oy2-ZR-3jm" secondAttribute="trailing" id="wjT-Wq-foL"/>
+                            <constraint firstItem="8gC-8u-NWN" firstAttribute="bottom" secondItem="jHK-Zl-Nkc" secondAttribute="bottom" constant="20" id="yZy-Dp-dsX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8gC-8u-NWN"/>
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="o3b-KG-o2S" id="EcL-lj-tf2"/>
+                        <outlet property="distanceOfRout" destination="OuC-0y-qfh" id="bIL-LG-Idc"/>
                         <outlet property="doneButton" destination="wjB-xp-fYa" id="YZC-oZ-V6X"/>
+                        <outlet property="goButton" destination="jHK-Zl-Nkc" id="ug2-v4-sJ4"/>
                         <outlet property="mapPinImage" destination="Vrx-wg-go6" id="3uc-6C-Vta"/>
                         <outlet property="mapView" destination="UA8-to-ANI" id="6Gw-jO-wfG"/>
+                        <outlet property="timeOfRoute" destination="xra-tD-Jci" id="F0x-fa-xNr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jk-6u-H3s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -500,6 +534,7 @@
     </scenes>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="GetDirection" width="50" height="50"/>
         <image name="Location" width="128" height="128"/>
         <image name="Photo" width="195" height="196"/>
         <image name="Pin" width="42" height="42"/>
